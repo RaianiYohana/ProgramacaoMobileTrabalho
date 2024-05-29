@@ -11,7 +11,7 @@ export default function componente3(props){
 <Button
           color='grey'
           title='Calcular o IMC informado'
-          onPress={mostrarMensagemBt} />
+          onPress={props.mostrarMensagemBt} />
         </View>
     )
 }

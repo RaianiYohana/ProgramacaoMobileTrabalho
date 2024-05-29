@@ -8,18 +8,15 @@ import { View, Text, FlatList } from "react-native";
   
 function mostrarItemLista(item){
     return ( 
-      <View >
-        <Text >{item}</Text>
-      </View>
+      <Text >{item}</Text>
     )
   }
   
   export default function componente4(props){
+    console.log(props.itens);
     return (
         
-        <FlatList
-          
-          data={ props.itens }
+        <FlatList style={{width:'70%'}} data={ props.itens }
           renderItem={({item}) => mostrarItemLista(item)}
         />
     )

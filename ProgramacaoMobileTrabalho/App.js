@@ -2,17 +2,17 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { React, useState } from "react";
 import Componente1 from './compnentes/componente1';
 import Componente2 from './compnentes/componente2';
-import Componente3 from './compnentes/Componente3';
+import Componente3 from './compnentes/componente3';
 import Componente4 from './compnentes/componente4';
 
 export default function App() {
   const [peso, setPeso] = useState(0.0);
   const [altura, setAltura] = useState(0.0);
-  const [lista, setLista] = useState(0.0);
+  const [lista, setLista] = useState([]);
 
   function mostrarMensagem() {
     var imc = peso / (altura * altura)
-    setLista("Peso: " + peso + "\naltura: " + altura + "\nIMC: " + imc.toFixed(2))
+    setLista([...lista, "Peso: " + peso + ", altura: " + altura + ", nIMC: " + imc.toFixed(2)])
   }
 
   return (
@@ -30,8 +30,7 @@ export default function App() {
         mostrarMensagemBt={mostrarMensagem}
       ></Componente3>
 
-      < Componente4>
-        itens = {setLista} </Componente4>
+      < Componente4 itens={lista}> </Componente4>
 
     </View>
   );
